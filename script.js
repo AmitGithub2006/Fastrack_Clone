@@ -166,7 +166,7 @@ async function cart_button() {
   main2.innerHTML = `
   <div class="cartt">
   <p class="billShow">Total Bill : <span class="money">₹${total}</span></p>
-  <button class="checkout-btn" onclick="checkout()">Checkout</button>
+  <button class="checkout-btn" onclick="checkout(event)">Checkout</button>
   </div>`;
 
   let cart_div = document.querySelector(".cartt");
@@ -182,15 +182,20 @@ async function cart_button() {
     </div>
     `;
   });
+  const checkOutBtn = document.querySelector(".checkout-btn");
   if (cart.length == 0) {
+    checkOutBtn.style.display = 'none';
     cart_div.innerHTML += `<h1 class="empty-cart-heading">Your cart is empty!!</h1>`;
     // checkoutBtn.style.display = 'none';
   }
 }
 const deliveryCont = document.querySelector(".delivery-main-container");
 
-function checkout() {
+function checkout(e) {
+  let cart_div = document.querySelector(".cartt"); // change
+  e.target.style.display = "none"; // change
   deliveryCont.style.display = "block";
+  cart_div.style.display = "none"; // change
 
   const deliveryFname = document.getElementById("delivery-fname");
   const deliveryLname = document.getElementById("delivery-lname");
@@ -210,7 +215,7 @@ function checkout() {
       alert("please enter your details properly");
     } else {
       alert("pay the bill");
-      deliveryCont.style.display = "none";
+      // deliveryCont.style.display = "none";
       billBtn.style.display = "block";
       let total = 0;
       for (let i = 0; i < cart.length; i++) {

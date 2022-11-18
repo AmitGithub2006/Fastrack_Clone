@@ -1916,11 +1916,9 @@ logo {
   border: 2px solid gray;
   border-radius: 10px;
   width: 35%;
-  margin: 20px;
   background-color: black;
   color: white;
-  position: relative;
-  left: 850px;
+  margin: 20px auto;
 }
 
 .delHead {
@@ -1949,5 +1947,16 @@ logo {
   font-weight: 600;
   font-size: 1.5rem;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+#billBtn {
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 2rem;
+  background-color: black;
+  border-radius: 5px;
+  color: rgb(134, 153, 187);
+  outline: none;
   cursor: pointer;
 }
