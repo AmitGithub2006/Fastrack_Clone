@@ -102,7 +102,8 @@ searchIcon.addEventListener("click", function () {
 
   const loadProducts = async () => {
     try {
-      const res = await fetch(`https://avish-test-api.herokuapp.com/watches`);
+      // const res = await fetch(`https://avish-test-api.herokuapp.com/watches`);
+      const res = await fetch('db.json');
       allProducts = await res.json();
       displayProducts(allProducts);
     } catch (err) {
@@ -135,7 +136,8 @@ cartNumber.innerHTML = `<sup class="cart-count">${cart.length}<sup>`;
 var data = [];
 
 async function add_to_cart(e) {
-  let response = await fetch(`https://avish-test-api.herokuapp.com/watches`);
+  // let response = await fetch(`https://avish-test-api.herokuapp.com/watches`);
+  let response = await fetch('db.json');
   let data = await response.json();
   // console.log(e.target.id)
   let idd = e.target.id;
